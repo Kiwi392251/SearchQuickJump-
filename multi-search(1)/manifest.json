@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "搜索引擎快捷跳转按钮",
+  "version": "1.0",
+  "description": "在搜索结果页面右上角添加跳转按钮，快速搜索小红书、抖音、B站、豆瓣、ChatGPT。",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.google.com/search*",
+        "*://www.bing.com/search*",
+        "*://search.yahoo.com/search*",
+        "*://www.baidu.com/s*",
+        "*://www.sogou.com/web*",
+        "*://www.so.com/s*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": []
+}
